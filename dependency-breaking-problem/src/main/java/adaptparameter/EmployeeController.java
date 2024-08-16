@@ -1,6 +1,5 @@
 package adaptparameter;
 
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 
 import java.util.Arrays;
@@ -10,8 +9,8 @@ public class EmployeeController {
 
     private EmployeeService employeeService;
 
-    public void listEmployeesByIds(HttpServletRequest request) {
-        var ids = Arrays.stream(request.getParameterValues("ids")).map(Integer::parseInt).toList();
+    public void listEmployeesByIds(Parameters parameters) {
+        var ids = Arrays.stream(parameters.getParameterValues("ids")).map(Integer::parseInt).toList();
         employeeService.findAll(ids);
     }
 }

@@ -10,6 +10,6 @@ public class LogRequestFilter {
 
     public void doChain(HttpServletRequest request) {
         System.out.println(request.getHeader("RequestId"));
-        employeeController.listEmployeesByIds(request);
+        employeeController.listEmployeesByIds(new HttpServletParameters(request));
     }
 }
