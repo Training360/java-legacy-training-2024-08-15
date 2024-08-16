@@ -4,6 +4,8 @@ import jakarta.faces.context.FacesContext;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Random;
+
 public class EmployeeController {
 
     @Getter
@@ -12,12 +14,19 @@ public class EmployeeController {
 
     public String sayHello() {
         String message = "Hello %s".formatted(name);
-        FacesContext.getCurrentInstance()
-                .getExternalContext()
-                .getFlash()
-                .put("message",
-                        message);
+
+        extracted();
+
         return "/hello.xhtml?faces-redirect=true";
+    }
+
+    void extracted() {
+        Random random = new Random();
+        for (;;) {
+            if (random.nextInt(1000) == 10) {
+                break;
+            }
+        }
     }
 
 }

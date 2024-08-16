@@ -1,7 +1,8 @@
-package extractandoverridefactorymethod.problem;
+package extractandoverridefactorymethod;
 
 import lombok.SneakyThrows;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -12,6 +13,10 @@ public class EmployeeFile {
 
     @SneakyThrows
     public EmployeeFile(Path path) {
+        readLines(path);
+    }
+
+    void readLines(Path path) throws IOException {
         lines = Files.readAllLines(path);
     }
 

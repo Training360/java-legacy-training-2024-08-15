@@ -1,13 +1,13 @@
-package pullupfeature;
+package pushdowndependency;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Basket extends ReadOnlyBasket {
+public class ReadWriteBasket extends Basket {
 
     private ItemValidator itemValidator;
 
-    public Basket() {
+    public ReadWriteBasket() {
         items = new ArrayList<>(List.of("bread", "milk"));
         itemValidator = new ItemValidator();
     }
@@ -17,10 +17,8 @@ public class Basket extends ReadOnlyBasket {
     }
 
     public void editItem(String item, String newItem) {
-        itemValidator.validate(newItem);
+        itemValidator.validate(item);
     }
 
 
-    // ertwertwertwertwertwertw
-    // weqrf...
 }

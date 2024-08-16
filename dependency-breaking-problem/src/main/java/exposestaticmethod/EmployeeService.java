@@ -17,7 +17,7 @@ public class EmployeeService {
 
     // Probléma: nem lehet példányosítani
     // Megoldás: legyen statikus metódus
-    public String sayHello(String name) {
+    public static String sayHello(String name) {
         return "Hello %s!".formatted(name);
     }
 

@@ -1,18 +1,15 @@
-package pushdowndependency;
+package pullupfeature;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Basket {
+public class ReadOnlyBasket {
 
     private static final int MAX_LENGTH = 8;
 
     private static final String PLACEHOLDER = "...";
 
+
     protected List<String> items;
-
-
-
 
     public List<String> getDottedItems() {
         return items.stream().map(this::dotted).toList();
@@ -26,4 +23,5 @@ public class Basket {
             return s;
         }
     }
+
 }

@@ -7,7 +7,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BasketController {
 
-    private Basket basket;
+    private ReadWriteBasket basket;
 
     public void addItem(String item) {
         basket.addItem(item);
