@@ -11,15 +11,15 @@ class EmployeeServiceTest {
 
     @Test
     void findUpperCasedEmployees() {
-        var employeeService = new EmployeeService() {
-            @Override
-            List<String> findEmployees() {
-                return List.of("John Doe", "Jane Doe");
-            }
-        };
-//        var employeeService = spy(new EmployeeService());
+//        var employeeService = new EmployeeService() {
+//            @Override
+//            List<String> findEmployees() {
+//                return List.of("John Doe", "Jane Doe");
+//            }
+//        };
+        var employeeService = spy(new EmployeeService());
 //        when(employeeService.findEmployees()).thenReturn(List.of("John Doe", "Jane Doe"));
-//        doReturn(List.of("John Doe", "Jane Doe")).when(employeeService.findEmployees());
+        doReturn(List.of("John Doe", "Jane Doe")).when(employeeService).findEmployees();
 
         System.out.println(employeeService.findEmployees());
 
