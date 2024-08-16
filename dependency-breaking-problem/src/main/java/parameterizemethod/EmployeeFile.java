@@ -1,5 +1,6 @@
 package parameterizemethod;
 
+import exceptions.CanNotRunInTestException;
 import lombok.SneakyThrows;
 
 import java.nio.file.Files;
@@ -16,6 +17,6 @@ public class EmployeeFile {
 
     @SneakyThrows
     public List<String> readNames() {
-        return Files.readAllLines(path);
+        throw new CanNotRunInTestException();
     }
 }
