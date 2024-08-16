@@ -1,6 +1,7 @@
 package subclassandoverridemethod;
 
 import lombok.SneakyThrows;
+import org.assertj.core.util.VisibleForTesting;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,7 +14,8 @@ public class EmployeeService {
     }
 
     @SneakyThrows
-    private List<String> findEmployees() {
+    @VisibleForTesting
+    List<String> findEmployees() {
         return Files.readAllLines(Path.of("employees.txt"));
     }
 
