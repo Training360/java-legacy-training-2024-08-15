@@ -8,10 +8,11 @@ import java.nio.file.Path;
 import java.util.List;
 
 @AllArgsConstructor
-public class CsvEmployeesFile {
+public class CsvEmployeesFile implements EmployeesFile {
 
     private Path path;
 
+    @Override
     @SneakyThrows
     public List<String> readEmployees() {
         return Files.readAllLines(path);
