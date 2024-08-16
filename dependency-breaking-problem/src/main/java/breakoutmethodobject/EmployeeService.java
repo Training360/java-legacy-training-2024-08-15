@@ -24,6 +24,6 @@ public class EmployeeService {
     }
 
     private List<String> getLines(Path file) {
-        return new EmployeesFile(file).getLines();
+        return new EmployeesFile(file).getLines(file);
     }
 }
