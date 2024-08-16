@@ -12,6 +12,6 @@ public class EmployeeController {
     }
 
     public List<String> readEmployees() {
-        return employeeService.readEmployees(new EmployeesFile(Path.of("employees.csv")));
+        return employeeService.readEmployees(new CsvEmployeesFile(Path.of("employees.csv")));
     }
 }
