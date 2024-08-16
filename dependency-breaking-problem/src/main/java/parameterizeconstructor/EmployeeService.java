@@ -4,10 +4,19 @@ import java.util.List;
 
 public class EmployeeService {
 
-    private EmployeeRepository repository;
+    private final EmployeeRepository repository;
 
+    /**
+     * @deprecated
+     * Use parametrized constructor.
+     */
+    @Deprecated(since = "1.0.0")
     public EmployeeService() {
-        repository = new EmployeeRepository();
+        this(new EmployeeRepository());
+    }
+
+    public EmployeeService(EmployeeRepository repository) {
+        this.repository = repository;
     }
 
     public List<String> findAll() {

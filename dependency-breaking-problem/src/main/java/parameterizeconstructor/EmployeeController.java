@@ -1,6 +1,10 @@
 package parameterizeconstructor;
 
+import java.util.List;
+
 public class EmployeeController {
 
-    private EmployeeService employeeService;
+    public List<String> findAll() {
+        return new EmployeeService().findAll();
+    }
 }
